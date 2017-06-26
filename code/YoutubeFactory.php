@@ -131,7 +131,7 @@ class YoutubeFactory
         foreach($videos as $video) {
 
             // Get the entry or create new one
-            if (!$yv = YoutubeVideo::get()->filter('PlaylistItemID', $video->id)->first()) {
+            if (!($yv = YoutubeVideo::get()->filter('PlaylistItemID', $video->id)->first()) && !($yv = YoutubeVideo::get()->filter('VideoID', $video->contentDetails->videoId)->first())) {
                 $yv = new YoutubeVideo();
                 $yv->Title = $video->snippet->title;
                 $yv->Description = $video->snippet->description;
