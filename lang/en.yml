@@ -11,6 +11,7 @@ en:
     PLAYLISTS_DESCRIPTION: 'Comma-separated list of Youtube playlists - leave it empty to get all'
     YOUTUBE_API_KEY: 'Youtube API Key'
     YOUTUBE_USER_NAME: 'Youtube user name'
+    YOUTUBE_CHANNEL_ID: 'Youtube channel id'
   YoutubeVideo:
     DESCRIPTION: Description
     PLURALNAME: 'Youtube Videos'

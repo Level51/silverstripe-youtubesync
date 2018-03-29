@@ -46,7 +46,10 @@ class GridFieldSyncYoutubeVideos implements GridField_HTMLProvider, GridField_Ac
         $sc = SiteConfig::current_site_config();
 
         // Call the factory
-        $yf->getVideosByUser($sc->YoutubeUserName, $sc->Playlists);
+        if ($sc->YoutubeUserName)
+            $yf->getVideosByUser($sc->YoutubeUserName, $sc->Playlists);
+        else if ($sc->YoutubeChannelId)
+            $yf->getVideosByChannelId($sc->YoutubeChannelId, $sc->Playlists);
 
         // Redirect to the grid overview
         Controller::curr()->redirectBack();
